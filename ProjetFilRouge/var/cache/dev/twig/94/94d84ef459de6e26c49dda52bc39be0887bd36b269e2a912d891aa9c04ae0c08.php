@@ -84,7 +84,12 @@ class __TwigTemplate_1f29660e072fcf923e23bc5477594b03eac8fb6a580468b15866c6b773d
                     <div class=\"card\">
                         <div class=\"card-body\">
                             <h5 class=\"card-title\">
-
+                                <a href=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 18), "slug" => twig_get_attribute($this->env, $this->source, $context["property"], "slug", [], "any", false, false, false, 18)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 18), "html", null, true);
+            echo "</a>
                             </h5>
                             <p class=\"card-text\">";
             // line 20
@@ -124,7 +129,7 @@ class __TwigTemplate_1f29660e072fcf923e23bc5477594b03eac8fb6a580468b15866c6b773d
 
     public function getDebugInfo()
     {
-        return array (  104 => 25,  91 => 20,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  109 => 25,  96 => 20,  89 => 18,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -146,7 +151,7 @@ class __TwigTemplate_1f29660e072fcf923e23bc5477594b03eac8fb6a580468b15866c6b773d
                     <div class=\"card\">
                         <div class=\"card-body\">
                             <h5 class=\"card-title\">
-
+                                <a href=\"{{ path('property.show',{id: property.id, slug: property.slug})}}\">{{ property.title }}</a>
                             </h5>
                             <p class=\"card-text\">{{ property.category }} {{ property.price }}</p>
                         </div>

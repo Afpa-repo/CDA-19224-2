@@ -95,6 +95,7 @@ class AdminPropertyController extends AbstractController {
         if ($this->isCsrfTokenValid('delete' . $property->getId(), $request->get('_token'))) {
             $this->em->remove($property);
              $this->em->flush();
+             $this->addFlash('success','Base de données mise à jour!');
         }
         return $this->redirectToRoute('admin.property.index');
     }

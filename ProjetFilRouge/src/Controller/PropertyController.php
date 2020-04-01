@@ -21,6 +21,17 @@ class PropertyController extends AbstractController {
     }
 
     /**
+     * @param PropertyRepository $repository
+     * @return Response
+     * @Route("/articles",name="articles.index")
+     */
+    public function index(PropertyRepository $repository): Response
+    {
+        $property = $this->repository->findAll();
+        return $this->render('property/index.html.twig');
+    }
+
+    /**
      * @Route("/hair", name="hairproperty.index")
      */
     public function hair(PropertyRepository $repository): Response
@@ -50,6 +61,23 @@ class PropertyController extends AbstractController {
             dump($property);
             return $this->render('property/accesories.index.html.twig');
         }
+
+    /**
+     * @Route("/articles/{slug}{id}",name = "property.show", requirements={"slug":"[a-z0-9\-]*"})
+     */
+    public function show(Property $property, string $slug):Response
+    {
+        if($property->getSlug()!==$slug){
+            return $this->redirectToRoute('property.show',[
+                'id'=>$property->getId(),
+                'slug'=>$property->getSlug()
+            ], 301);
+        }
+        return $this->render('property/show.html.twig',[
+            'property' => $property,
+            'current_menu' => 'properties']);
+
+    }
 
 
 

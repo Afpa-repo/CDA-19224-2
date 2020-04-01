@@ -65,7 +65,7 @@ class __TwigTemplate_cf3162eb432a452572f19d5e905c627f13900357841e02ca6adeb0f1030
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Gérer les biens";
+        echo " <title> Gérer les articles </title>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,11 +87,11 @@ class __TwigTemplate_cf3162eb432a452572f19d5e905c627f13900357841e02ca6adeb0f1030
         // line 5
         echo "    <div class=\"container mt-4\">
 
-        <h1>Gérer les biens</h1>
+        <h1>Gérer les articles</h1>
     <table class=\"table table-stripped\">
         <thead>
         <tr>
-            <th> Titre du bien</th>
+            <th> Nom de l'article </th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -170,16 +170,16 @@ class __TwigTemplate_cf3162eb432a452572f19d5e905c627f13900357841e02ca6adeb0f1030
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-{% block title'Gérer les biens' %}
+{% block title %} <title> Gérer les articles </title>{% endblock %}
 
 {% block body %}
     <div class=\"container mt-4\">
 
-        <h1>Gérer les biens</h1>
+        <h1>Gérer les articles</h1>
     <table class=\"table table-stripped\">
         <thead>
         <tr>
-            <th> Titre du bien</th>
+            <th> Nom de l'article </th>
             <th>Actions</th>
         </tr>
         </thead>

@@ -19,8 +19,10 @@ return [
     'admin.property.new' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminPropertyController::new'], [], [['text', '/admin/property/create']], [], []],
     'admin.property.edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminPropertyController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/property']], [], []],
     'admin.property.delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminPropertyController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/property']], [], []],
+    'articles.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::index'], [], [['text', '/articles']], [], []],
     'hairproperty.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::hair'], [], [['text', '/hair']], [], []],
     'bodyproperty.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::body'], [], [['text', '/body']], [], []],
     'accessories.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::accessory'], [], [['text', '/accessories']], [], []],
+    'property.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\PropertyController::show'], ['slug' => '[a-z0-9\\-]*'], [['variable', '', '[^/]++', 'id', true], ['variable', '/', '[a-z0-9\\-]*', 'slug', true], ['text', '/articles']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
 ];

@@ -1,10 +1,20 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}<title>Nos accessoires</title>{% endblock %}
 {% block body %}
-
+    <h1>Allô?</h1>
+<div class="container">
+    <h2>Nos derniers articles!</h2>
+    <div class="row flex">
+        {%  for property in properties %}
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{{ path('property.show',{id: property.id, slug: property.slug})}}">{{ property.title }}</a>
+                    </h5>
+                    <p class="card-text">{{ property.category }} {{ property.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 {% endblock %}
-
-{% block title %}
-
-{% endblock %}
-

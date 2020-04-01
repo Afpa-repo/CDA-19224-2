@@ -4,6 +4,7 @@ namespace App\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
+use Cocur\Slugify\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PropertyRepository")
@@ -105,6 +106,12 @@ class Property
         $this->available = $available;
 
         return $this;
+    }
+
+
+    public function getSlug():string
+    {
+        return (new Slugify())->slugify($this->title);
     }
 
 }
