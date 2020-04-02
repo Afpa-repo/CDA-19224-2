@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
+class ComposerStaticInita28da8b44dd2957c0e80402b85320ad6
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -16,6 +16,7 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -23,14 +24,10 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'Z' => 
-        array (
-            'Zend\\EventManager\\' => 18,
-            'Zend\\Code\\' => 10,
-        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+            'Webimpress\\SafeWriter\\' => 22,
         ),
         'T' => 
         array (
@@ -91,6 +88,7 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Component\\BrowserKit\\' => 29,
             'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Bundle\\WebServerBundle\\' => 31,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -111,12 +109,19 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'ProxyManager\\' => 13,
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
+        ),
+        'L' => 
+        array (
+            'Laminas\\ZendFrameworkBridge\\' => 28,
+            'Laminas\\EventManager\\' => 21,
+            'Laminas\\Code\\' => 13,
         ),
         'E' => 
         array (
@@ -139,10 +144,6 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
-        'C' => 
-        array (
-            'Cocur\\Slugify\\' => 14,
-        ),
         'A' => 
         array (
             'App\\Tests\\' => 10,
@@ -157,17 +158,13 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
-        'Zend\\EventManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
-        ),
-        'Zend\\Code\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
-        ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Webimpress\\SafeWriter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webimpress/safe-writer/src',
         ),
         'Twig\\Extra\\TwigExtraBundle\\' => 
         array (
@@ -385,6 +382,10 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         array (
             0 => __DIR__ . '/..' . '/symfony/asset',
         ),
+        'Symfony\\Bundle\\WebServerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-server-bundle',
+        ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
@@ -453,6 +454,10 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'ProxyManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src/ProxyManager',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -464,6 +469,18 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Laminas\\ZendFrameworkBridge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
+        ),
+        'Laminas\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-eventmanager/src',
+        ),
+        'Laminas\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -528,10 +545,6 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
         ),
-        'Cocur\\Slugify\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/cocur/slugify/src',
-        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -539,16 +552,6 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'ProxyManager\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
-            ),
         ),
     );
 
@@ -565,10 +568,9 @@ class ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6905e9101230201b6ab97e2eb09ca7a0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita28da8b44dd2957c0e80402b85320ad6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita28da8b44dd2957c0e80402b85320ad6::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita28da8b44dd2957c0e80402b85320ad6::$classMap;
 
         }, null, ClassLoader::class);
     }
