@@ -19,6 +19,9 @@ return [
         '/hair' => [[['_route' => 'hairproperty.index', '_controller' => 'App\\Controller\\PropertyController::hair'], null, null, null, false, false, null]],
         '/body' => [[['_route' => 'bodyproperty.index', '_controller' => 'App\\Controller\\PropertyController::body'], null, null, null, false, false, null]],
         '/accessories' => [[['_route' => 'accessories.index', '_controller' => 'App\\Controller\\PropertyController::accessory'], null, null, null, false, false, null]],
+        '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\SecurityController::create_user'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

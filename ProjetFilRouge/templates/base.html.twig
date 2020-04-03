@@ -9,13 +9,6 @@
     </head>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <a class="navbar-brand" href="{{ path('home') }}">Green and Care</a>
-        {% if app.user %}
-        <a href="{{ path("logout") }}">Déconnexion</a>
-        {% else %}
-        <a href="{{ path("login") }}">Connexion</a>
-        <a href="{{ path("inscription") }}">Inscription</a>
-
-        {% endif %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,6 +28,16 @@
                         <a class="dropdown-item" href="{{ path('accessories.index') }}">Accessoires </a>
                     </div>
                 </li>
+                {% if app.user %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path("logout") }}">Déconnexion</a></li>
+                {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path("login") }}">Connexion</a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path("inscription") }}">Inscription</a></li>
+
+                {% endif %}
             </ul>
         </div>
     </nav>
