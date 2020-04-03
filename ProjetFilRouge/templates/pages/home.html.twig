@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="jumbotron txt-center">
+    <h1>Green and Care</h1>
+    <h2>Prenez soin de la Terre comme de vous.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi consectetur facilis id incidunt inventore iusto, magnam molestiae, natus nemo numquam provident recusandae, repellat sint sit tempore vitae voluptate? Reiciendis.</p>
+</div>
+
+    <div class="container">
+        <h2>Nos derniers articles!</h2>
+        <div class="row flex">
+            {%  for property in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('property.show',{id: property.id, slug: property.slug})}}">{{ property.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ property.category }} {{ property.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
