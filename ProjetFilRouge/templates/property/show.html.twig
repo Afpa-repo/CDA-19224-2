@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title%}<title> {{ property.title }} </title>{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ property.title }}</h1>
+                    <h2>{{ property.category }}  ({{ property.price}} €</h2>
+                    <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h3 class="text-center">Description</h3>
+        <p> {{ property.description |nl2br }}</p>
+    </div>
+{% endblock %}
