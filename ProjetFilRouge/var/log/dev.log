@@ -168,3 +168,7 @@
 [2020-04-03T08:28:56.110625+00:00] doctrine.DEBUG: SELECT p0_.id AS id_0, p0_.title AS title_1, p0_.category AS category_2, p0_.description AS description_3, p0_.price AS price_4, p0_.available AS available_5 FROM property p0_ LIMIT 4 [] []
 [2020-04-03T08:28:56.141365+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2020-04-03T08:28:56.491159+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"61d36f"},"request_uri":"http://127.0.0.1:8000/_wdt/61d36f","method":"GET"} []
+[2020-04-03T09:11:00.942373+00:00] request.INFO: Matched route "home". {"route":"home","route_parameters":{"_route":"home","_controller":"App\\Controller\\HomeController::index"},"request_uri":"http://127.0.0.1:8000/","method":"GET"} []
+[2020-04-03T09:11:01.105336+00:00] doctrine.DEBUG: SELECT p0_.id AS id_0, p0_.title AS title_1, p0_.category AS category_2, p0_.description AS description_3, p0_.price AS price_4, p0_.available AS available_5 FROM property p0_ LIMIT 4 [] []
+[2020-04-03T09:11:01.172568+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2020-04-03T09:11:01.663759+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"c03808"},"request_uri":"http://127.0.0.1:8000/_wdt/c03808","method":"GET"} []
