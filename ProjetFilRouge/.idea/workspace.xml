@@ -353,12 +353,20 @@
     <state x="487" y="307" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1585755951725" />
     <state x="487" y="301" key="com.intellij.ide.util.TipDialog/0.23.1280.724@0.23.1280.724" timestamp="1585727021499" />
     <state x="487" y="302" key="com.intellij.ide.util.TipDialog/0.23.1280.726@0.23.1280.726" timestamp="1585735115653" />
+<<<<<<< HEAD
     <state x="463" y="271" width="838" height="380" key="run.anything.popup" timestamp="1585901740979">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="325" y="-374" width="838" height="675" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@-620.-1440.2560.1440" timestamp="1585667256883" />
     <state x="463" y="269" width="838" height="345" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@0.0.1280.800" timestamp="1585747361393" />
     <state x="463" y="271" width="838" height="380" key="run.anything.popup/0.0.1280.800@0.0.1280.800" timestamp="1585901740979" />
+=======
+    <state x="463" y="269" width="838" height="345" key="run.anything.popup" timestamp="1585749140298">
+      <screen x="0" y="23" width="1280" height="727" />
+    </state>
+    <state x="325" y="-374" width="838" height="675" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@-620.-1440.2560.1440" timestamp="1585667256883" />
+    <state x="463" y="269" width="838" height="345" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@0.0.1280.800" timestamp="1585747361393" />
+>>>>>>> Serhat
     <state x="473" y="558" width="838" height="339" key="run.anything.popup/0.23.1280.723@0.23.1280.723" timestamp="1585730324758" />
     <state x="473" y="559" width="838" height="340" key="run.anything.popup/0.23.1280.724@0.23.1280.724" timestamp="1585733539675" />
     <state x="473" y="561" width="838" height="342" key="run.anything.popup/0.23.1280.726@0.23.1280.726" timestamp="1585735910275" />
