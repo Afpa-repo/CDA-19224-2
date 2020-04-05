@@ -24,8 +24,5 @@ return [
     'bodyproperty.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::body'], [], [['text', '/body']], [], []],
     'accessories.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::accessory'], [], [['text', '/accessories']], [], []],
     'property.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\PropertyController::show'], ['slug' => '[a-z0-9\\-]*'], [['variable', '', '[^/]++', 'id', true], ['variable', '/', '[a-z0-9\\-]*', 'slug', true], ['text', '/articles']], [], []],
-    'inscription' => [[], ['_controller' => 'App\\Controller\\SecurityController::create_user'], [], [['text', '/inscription']], [], []],
-    'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
-    'logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
 ];
