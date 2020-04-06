@@ -117,3 +117,4 @@ a26754,::1,POST,http://localhost:8000/inscription,1586167457,,500
 f0dbfa,::1,GET,http://localhost:8000/login,1586167524,,200
 36876a,::1,POST,http://localhost:8000/login,1586167530,,302
 a9a6cf,::1,GET,http://localhost:8000/,1586167531,,200
+9bfa54,::1,GET,http://localhost:8000/,1586170942,,200
