@@ -1,7 +1,3 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-<<<<<<< HEAD:ProjetFilRouge/config/packages/twig.yaml
     form_themes: ['bootstrap_4_layout.html.twig']
-=======
-    form_themes: ['bootstrap_4_layout.html.twig']
->>>>>>> Guillaume:GreenAndCare/config/packages/twig.yaml
