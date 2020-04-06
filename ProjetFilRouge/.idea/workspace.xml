@@ -296,5 +296,44 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1680.0.1680.1010@0.0.1366.728" timestamp="1585991486516" />
+    <state x="463" y="271" width="838" height="380" key="run.anything.popup" timestamp="1585901740979">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="325" y="-374" width="838" height="675" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@-620.-1440.2560.1440" timestamp="1585667256883" />
+    <state x="463" y="269" width="838" height="345" key="run.anything.popup/0.0.1280.800/-620.-1440.2560.1440@0.0.1280.800" timestamp="1585747361393" />
+    <state x="463" y="271" width="838" height="380" key="run.anything.popup/0.0.1280.800@0.0.1280.800" timestamp="1585901740979" />
+    <state x="473" y="558" width="838" height="339" key="run.anything.popup/0.23.1280.723@0.23.1280.723" timestamp="1585730324758" />
+    <state x="473" y="559" width="838" height="340" key="run.anything.popup/0.23.1280.724@0.23.1280.724" timestamp="1585733539675" />
+    <state x="473" y="561" width="838" height="342" key="run.anything.popup/0.23.1280.726@0.23.1280.726" timestamp="1585735910275" />
+    <state x="463" y="269" width="838" height="345" key="run.anything.popup/0.23.1280.727/-620.-1417.2560.1417@0.23.1280.727" timestamp="1585749140298" />
+    <state x="463" y="269" width="838" height="343" key="run.anything.popup/0.23.1280.727@0.23.1280.727" timestamp="1585736870629" />
+    <state x="473" y="562" width="838" height="342" key="run.anything.popup/0.23.1280.728@0.23.1280.728" timestamp="1585733753636" />
+    <state x="463" y="270" width="838" height="345" key="run.anything.popup/0.23.1280.729/-620.-1417.2560.1417@0.23.1280.729" timestamp="1585742764753" />
+    <state x="463" y="270" width="838" height="345" key="run.anything.popup/0.23.1280.730/-620.-1417.2560.1417@0.23.1280.730" timestamp="1585742691459" />
+    <state x="323" y="-761" width="838" height="633" key="run.anything.popup/0.23.1280.777/-620.-1417.2560.1350@-620.-1417.2560.1350" timestamp="1585658510209" />
+    <state x="325" y="-374" width="838" height="675" key="run.anything.popup/0.23.1280.777/-620.-1440.2560.1440@-620.-1440.2560.1440" timestamp="1585662392714" />
+    <state x="431" y="179" width="838" height="575" key="search.everywhere.popup" timestamp="1585755026546">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="241" y="-1116" width="838" height="1032" key="search.everywhere.popup/0.0.1280.800/-620.-1440.2560.1440@-620.-1440.2560.1440" timestamp="1585666416690" />
+    <state x="431" y="179" width="838" height="575" key="search.everywhere.popup/0.0.1280.800/-620.-1440.2560.1440@0.0.1280.800" timestamp="1585755026546" />
+    <state x="431" y="186" width="838" height="519" key="search.everywhere.popup/0.23.1280.724@0.23.1280.724" timestamp="1585733238420" />
+    <state x="431" y="186" width="838" height="521" key="search.everywhere.popup/0.23.1280.726@0.23.1280.726" timestamp="1585735878203" />
+    <state x="431" y="186" width="838" height="522" key="search.everywhere.popup/0.23.1280.727@0.23.1280.727" timestamp="1585736258028" />
+    <state x="368" y="292" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1585736099445">
+      <screen x="0" y="23" width="1280" height="727" />
+    </state>
+    <state x="368" y="292" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1280.727@0.23.1280.727" timestamp="1585736099445" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/admin/property/_form.html.twig</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
