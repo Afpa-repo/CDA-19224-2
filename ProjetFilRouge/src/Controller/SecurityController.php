@@ -11,24 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-<<<<<<< HEAD
 class SecurityController extends AbstractController
 {
 
-=======
-class SecurityController extends AbstractController 
-{
-    
->>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775
 
     /**
      * @Route("/inscription", name="inscription")
      */
-<<<<<<< HEAD
     public function create_user(AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder)
-=======
-    public function create_user(AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder) 
->>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775
     {
         $user = new User();
 
@@ -60,15 +50,9 @@ class SecurityController extends AbstractController
             {
                 $user->setRole("particulier");
             }
-<<<<<<< HEAD
 
             $user->setPassword($hash);
 
-=======
-            
-            $user->setPassword($hash);
-            
->>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775
             $manager->persist($user);
             $manager->flush();
         }
@@ -91,8 +75,4 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775

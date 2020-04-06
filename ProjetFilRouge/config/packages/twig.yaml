@@ -1,7 +1,3 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-<<<<<<< HEAD
     form_themes: ['bootstrap_4_layout.html.twig']
-=======
-    form_themes: ['bootstrap_4_layout.html.twig']
->>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775
