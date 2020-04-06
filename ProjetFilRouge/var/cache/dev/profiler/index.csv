@@ -77,3 +77,6 @@ a8546a,127.0.0.1,POST,http://localhost:8000/admin/product/create,1586149190,,302
 7ab082,127.0.0.1,DELETE,http://localhost:8000/admin/product/5,1586149199,,302
 9ca020,127.0.0.1,GET,http://localhost:8000/admin,1586149201,,200
 b101ac,127.0.0.1,GET,http://localhost:8000/,1586149209,,200
+215928,127.0.0.1,GET,http://localhost:8000/,1586150338,,200
+cefa2e,127.0.0.1,GET,http://localhost:8000/admin,1586150483,,200
+b79ca5,127.0.0.1,GET,http://localhost:8000/,1586150485,,200
