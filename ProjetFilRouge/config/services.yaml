@@ -24,4 +24,8 @@ services:
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
+<<<<<<< HEAD
     # please note that last definitions always *replace* previous ones
+=======
+    # please note that last definitions always *replace* previous ones
+>>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="MariaDB - greenandcare@localhost" uuid="2b65d2da-d14d-4c13-bc3b-ab69db3b4b32">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+=======
+    <data-source source="LOCAL" name="projetFilRouge@localhost" uuid="5b881378-1623-45f4-ae6d-15abe1395ce9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/projetFilRouge</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+>>>>>>> c014c8c2a5ddff0a54800e95aa480d439d3ee775
     </data-source>
   </component>
 </project>
