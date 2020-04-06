@@ -91,4 +91,10 @@ b2bf56,127.0.0.1,GET,http://localhost:8000/,1586152010,7791a5,500
 6ad0e0,127.0.0.1,GET,http://localhost:8000/,1586152079,,200
 3454ef,127.0.0.1,GET,http://localhost:8000/admin,1586152092,,200
 
+<<<<<<< Updated upstream
 00b89d,127.0.0.1,GET,http://localhost:8000/,1586154014,,200
+=======
+e35c4f,127.0.0.1,GET,http://localhost:8000/,1586159155,,200
+9b5a15,127.0.0.1,GET,http://localhost:8000/,1586159178,,200
+9816b9,127.0.0.1,GET,http://localhost:8000/admin,1586159193,,200
+>>>>>>> Stashed changes

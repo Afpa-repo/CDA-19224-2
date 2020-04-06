@@ -16,6 +16,11 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerAjTjkcx\App_KernelDevDebugContainer([
     'container.build_hash' => 'AjTjkcx',
+<<<<<<< Updated upstream
     'container.build_id' => '4a27ca73',
     'container.build_time' => 1586153996,
+=======
+    'container.build_id' => '3bedc51d',
+    'container.build_time' => 1586159149,
+>>>>>>> Stashed changes
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerAjTjkcx');
