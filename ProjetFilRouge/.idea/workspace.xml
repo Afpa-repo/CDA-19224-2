@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c16531f-3ca9-4c5c-9e59-34b3442c5c85" name="Default Changelist" comment="Adding security/login.html.twig">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GreenAndCare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GreenAndCare.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/9d/9d793e8f4312739c529dbc96ab9258fc49d0d5d0d7932f8a9641aac43f915566.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/9d/9d793e8f4312739c529dbc96ab9258fc49d0d5d0d7932f8a9641aac43f915566.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +182,7 @@
       <workItem from="1586144930632" duration="3746000" />
       <workItem from="1586150405899" duration="8000" />
       <workItem from="1586151169799" duration="1554000" />
+      <workItem from="1586154053468" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="+">
       <created>1586151618132</created>
