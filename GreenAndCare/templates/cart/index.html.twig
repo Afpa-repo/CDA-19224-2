@@ -24,8 +24,8 @@
         <tr>
             <td>{{ item.product.title }}</td>
             <td>{{ item.product.price }}</td>
-            <td>{{ item.quatity }}</td>
-            <td>{{ item.product.price * item.quatity }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price * item.quantity }}</td>
             <td>
                 <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
