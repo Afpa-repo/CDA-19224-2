@@ -13,13 +13,12 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/admin' => [[['_route' => 'admin.property.index', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], null, null, null, false, false, null]],
-        '/admin/property/create' => [[['_route' => 'admin.property.new', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::new'], null, null, null, false, false, null]],
-        '/articles' => [[['_route' => 'articles.index', '_controller' => 'App\\Controller\\PropertyController::index'], null, null, null, false, false, null]],
-        '/hair' => [[['_route' => 'hairproperty.index', '_controller' => 'App\\Controller\\PropertyController::hair'], null, null, null, false, false, null]],
-        '/body' => [[['_route' => 'bodyproperty.index', '_controller' => 'App\\Controller\\PropertyController::body'], null, null, null, false, false, null]],
-        '/accessories' => [[['_route' => 'accessories.index', '_controller' => 'App\\Controller\\PropertyController::accessory'], null, null, null, false, false, null]],
+
+        '/admin' => [[['_route' => 'admin.product.index', '_controller' => 'App\\Controller\\Admin\\AdminProductController::index'], null, null, null, false, false, null]],
+        '/admin/product/create' => [[['_route' => 'admin.product.new', '_controller' => 'App\\Controller\\Admin\\AdminProductController::new'], null, null, null, false, false, null]],
+
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/nos-produits/accueil' => [[['_route' => 'product.index', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -38,12 +37,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/a(?'
-                    .'|dmin/property/([^/]++)(?'
-                        .'|(*:199)'
-                    .')'
-                    .'|rticles/([a-z0-9\\-]*)([^/]++)(*:237)'
+                .'|/admin/product/([^/]++)(?'
+                    .'|(*:195)'
                 .')'
+                .'|/nos\\-produits/([a-z0-9\\-]*)\\-([^/]++)(*:242)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -54,12 +51,12 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        199 => [
-            [['_route' => 'admin.property.edit', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
-            [['_route' => 'admin.property.delete', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        195 => [
+            [['_route' => 'admin.product.edit', '_controller' => 'App\\Controller\\Admin\\AdminProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
+            [['_route' => 'admin.product.delete', '_controller' => 'App\\Controller\\Admin\\AdminProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        237 => [
-            [['_route' => 'property.show', '_controller' => 'App\\Controller\\PropertyController::show'], ['slug', 'id'], null, null, false, true, null],
+        242 => [
+            [['_route' => 'product.show', '_controller' => 'App\\Controller\\ProductController::show'], ['slug', 'id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

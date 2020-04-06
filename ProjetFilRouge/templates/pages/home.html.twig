@@ -1,23 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-<div class="jumbotron txt-center">
-    <h1>Green and Care</h1>
-    <h2>Prenez soin de la Terre comme de vous.</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi consectetur facilis id incidunt inventore iusto, magnam molestiae, natus nemo numquam provident recusandae, repellat sint sit tempore vitae voluptate? Reiciendis.</p>
-</div>
+{% block title 'Produits entretien, cosmétiques, bien-être écologique | Green And Care' %}
 
+{% block body %}
     <div class="container">
-        <h2>Nos derniers articles!</h2>
+        <h1>Nos nouveautés</h1>
         <div class="row flex">
-            {%  for property in properties %}
+            {% for product in products %}
                 <div class="col-3">
                     <div class="card">
+                        <img src="" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="{{ path('property.show',{id: property.id, slug: property.slug})}}">{{ property.title }}</a>
+                                {{ product.title }}
                             </h5>
-                            <p class="card-text">{{ property.category }} {{ property.price }}</p>
+                            <p class="card-text">{{ product.shortDescription }}</p>
+                            <p class="card-text">{{ product.formattedPrice }} €</p>
+                            <a href="{{ path('product.show', {id: product.id, slug: product.slug}) }}" class="btn btn-light stretched-link">Détails</a>
                         </div>
                     </div>
                 </div>

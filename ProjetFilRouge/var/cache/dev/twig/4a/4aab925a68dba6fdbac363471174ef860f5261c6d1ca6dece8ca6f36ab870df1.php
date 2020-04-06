@@ -482,6 +482,6 @@ class __TwigTemplate_3e188cce3c1adb4765c1018da571479f6852bd54220b3eeb5ba4a3c13b6
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\Windows-Famille\\Documents\\CDA-19224-2\\ProjetFilRouge\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\Camille Toulisse\\Desktop\\Symfony\\GreenAndCare\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

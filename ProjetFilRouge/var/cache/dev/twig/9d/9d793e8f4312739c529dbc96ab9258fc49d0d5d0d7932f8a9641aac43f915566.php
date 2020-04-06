@@ -45,86 +45,155 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        ";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <title>";
         // line 6
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"
+          integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href=\"";
         // line 9
-        echo "    </head>
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-success\">
-        <a class=\"navbar-brand\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/front/css/all.css"), "html", null, true);
+        echo "\">
+    ";
+        // line 10
+        $this->displayBlock('stylesheets', $context, $blocks);
         // line 11
+        echo "</head>
+<body>
+<nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #f1f8e9;\">
+    <a class=\"navbar-brand\" href=\"";
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Green and Care</a>
-        ";
-        // line 12
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) {
-            // line 13
-            echo "        <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
-            echo "\">Déconnexion</a>
-        ";
-        } else {
-            // line 15
-            echo "        <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
-            echo "\">Connexion</a>
-        <a href=\"";
-            // line 16
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
-            echo "\">Inscription</a>
-
-        ";
+        echo "\">
+        <img src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/green_logo.png"), "html", null, true);
+        echo "\" width=\"60\" height=\"60\"
+             class=\"d-inline-block align-middle\"
+             alt=\"logo\">Green and Care
+    </a>
+    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\"
+            aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+        <span class=\"navbar-toggler-icon\"></span>
+    </button>
+    <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
+        <ul class=\"navbar-nav\">
+            <li class=\"nav-item ";
+        // line 25
+        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 25, $this->source); })()), "home"))) {
+            echo "active";
         }
-        // line 19
-        echo "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-            <span class=\"navbar-toggler-icon\"></span>
-        </button>
-        <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-            <ul class=\"navbar-nav\">
-                <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Accueil <span class=\"sr-only\">(current)</span></a>
-                </li>
-                <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Catégories
-                    </a>
-                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                        <a class=\"dropdown-item\" href=\"";
-        // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles.index");
-        echo "\">Tout nos articles</a>
-                        <a class=\"dropdown-item\" href=\"";
-        // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hairproperty.index");
-        echo "\">Pour les cheveux</a>
-                        <a class=\"dropdown-item\" href=\"";
-        // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bodyproperty.index");
-        echo "\">Pour le corps</a>
-                        <a class=\"dropdown-item\" href=\"";
-        // line 35
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accessories.index");
-        echo "\">Accessoires </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <body>
-        ";
-        // line 42
+        echo "\">
+                <a class=\"nav-link\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Accueil<span class=\"sr-only\">(current)</span></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Conseils</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Actualités</a>
+            </li>
+
+
+            <li class=\"nav-item dropdown ";
+        // line 36
+        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 36, $this->source); })()), "products"))) {
+            echo "active";
+        }
+        echo "\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\"
+                   data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Boutique
+                </a>
+                <div class=\"dropdown-menu\" style=\"background-color: #f1f8e9\"
+                     aria-labelledby=\"navbarDropdownMenuLink\">
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #ffab40\"
+                       href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.index");
+        echo "\">Tous nos produits</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #69f0ae\" href=\"#\">La
+                        maison</a>
+                    <a class=\"dropdown-item\" href=\"#\">Maison</a>
+                    <a class=\"dropdown-item\" href=\"#\">Vaisselle</a>
+                    <a class=\"dropdown-item\" href=\"#\">Microfibres</a>
+                    <a class=\"dropdown-item\" href=\"#\">Linge</a>
+                    <a class=\"dropdown-item\" href=\"#\">Atmosphère</a>
+                    <a class=\"dropdown-item\" href=\"#\">Accessoires d'entretien</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #880e4f\" href=\"#\">La
+                        cosmétique</a>
+                    <a class=\"dropdown-item\" href=\"#\">Visage</a>
+                    <a class=\"dropdown-item\" href=\"#\">Corps</a>
+                    <a class=\"dropdown-item\" href=\"#\">Hygiène</a>
+                    <a class=\"dropdown-item\" href=\"#\">Cheveux</a>
+                    <a class=\"dropdown-item\" href=\"#\">Homme</a>
+                    <a class=\"dropdown-item\" href=\"#\">Bébé</a>
+                    <a class=\"dropdown-item\" href=\"#\">Enfant</a>
+                    <a class=\"dropdown-item\" href=\"#\">Accessoires Cosmétiques</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #827717\" href=\"#\">Le
+                        bien-être</a>
+                    <a class=\"dropdown-item\" href=\"#\">Huiles essentielles</a>
+                    <a class=\"dropdown-item\" href=\"#\">Compléments alimentaires</a>
+                    <a class=\"dropdown-item\" href=\"#\">Tisanes</a>
+                </div>
+            </li>
+
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-search\"></i></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-shopping-basket\"></i></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user\"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    ";
+        // line 88
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "user", [], "any", false, false, false, 88)) {
+            // line 89
+            echo "        <a href=\"#\">Déconnexion</a>
+    ";
+        } else {
+            // line 91
+            echo "        <a href=\"#\">Connexion</a>
+        <a href=\"#\">Inscription</a>
+
+    ";
+        }
+        // line 95
+        echo "</nav>
+
+";
+        // line 97
         $this->displayBlock('body', $context, $blocks);
-        // line 44
-        echo "        ";
+        // line 98
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 49
-        echo "    </body>
+        // line 99
+        echo "<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
+        integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\"
+        integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\"
+        integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\"
+        crossorigin=\"anonymous\"></script>
+</body>
 </html>
 ";
         
@@ -135,7 +204,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -145,7 +214,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "<title>Green and Care</title>";
+        echo "Green and Care";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -154,7 +223,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 6
+    // line 10
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -164,9 +233,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 7
-        echo "            <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -175,7 +241,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 42
+    // line 97
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,7 +259,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 44
+    // line 98
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -203,11 +269,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 45
-        echo "            <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-            <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
-            <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
-        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -228,61 +289,120 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     public function getDebugInfo()
     {
-        return array (  207 => 45,  197 => 44,  179 => 42,  168 => 7,  158 => 6,  139 => 5,  127 => 49,  124 => 44,  122 => 42,  112 => 35,  108 => 34,  104 => 33,  100 => 32,  85 => 19,  79 => 16,  74 => 15,  68 => 13,  66 => 12,  62 => 11,  58 => 9,  55 => 6,  53 => 5,  47 => 1,);
+        return array (  263 => 98,  245 => 97,  227 => 10,  208 => 6,  187 => 99,  185 => 98,  183 => 97,  179 => 95,  173 => 91,  169 => 89,  167 => 88,  121 => 45,  107 => 36,  94 => 26,  88 => 25,  75 => 15,  71 => 14,  66 => 11,  64 => 10,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        {% block title %}<title>Green and Care</title>{% endblock %}
-        {% block stylesheets %}
-            <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-        {% endblock %}
-    </head>
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-success\">
-        <a class=\"navbar-brand\" href=\"{{ path('home') }}\">Green and Care</a>
-        {% if app.user %}
-        <a href=\"{{ path(\"logout\") }}\">Déconnexion</a>
-        {% else %}
-        <a href=\"{{ path(\"login\") }}\">Connexion</a>
-        <a href=\"{{ path(\"inscription\") }}\">Inscription</a>
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <title>{% block title %}Green and Care{% endblock %}</title>
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"
+          integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/front/css/all.css') }}\">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #f1f8e9;\">
+    <a class=\"navbar-brand\" href=\"{{ path('home') }}\">
+        <img src=\"{{ asset('assets/img/green_logo.png') }}\" width=\"60\" height=\"60\"
+             class=\"d-inline-block align-middle\"
+             alt=\"logo\">Green and Care
+    </a>
+    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\"
+            aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+        <span class=\"navbar-toggler-icon\"></span>
+    </button>
+    <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
+        <ul class=\"navbar-nav\">
+            <li class=\"nav-item {% if current_menu is defined and current_menu == 'home' %}active{% endif %}\">
+                <a class=\"nav-link\" href=\"{{ path('home') }}\">Accueil<span class=\"sr-only\">(current)</span></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Conseils</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Actualités</a>
+            </li>
 
-        {% endif %}
-        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-            <span class=\"navbar-toggler-icon\"></span>
-        </button>
-        <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-            <ul class=\"navbar-nav\">
-                <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Accueil <span class=\"sr-only\">(current)</span></a>
-                </li>
-                <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Catégories
-                    </a>
-                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                        <a class=\"dropdown-item\" href=\"{{ path('articles.index') }}\">Tout nos articles</a>
-                        <a class=\"dropdown-item\" href=\"{{ path('hairproperty.index') }}\">Pour les cheveux</a>
-                        <a class=\"dropdown-item\" href=\"{{ path('bodyproperty.index') }}\">Pour le corps</a>
-                        <a class=\"dropdown-item\" href=\"{{ path('accessories.index') }}\">Accessoires </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <body>
-        {% block body %}
-{% endblock %}
-        {% block javascripts %}
-            <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-            <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
-            <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
-        {% endblock %}
-    </body>
+
+            <li class=\"nav-item dropdown {% if current_menu is defined and current_menu == 'products' %}active{% endif %}\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\"
+                   data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Boutique
+                </a>
+                <div class=\"dropdown-menu\" style=\"background-color: #f1f8e9\"
+                     aria-labelledby=\"navbarDropdownMenuLink\">
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #ffab40\"
+                       href=\"{{ path('product.index') }}\">Tous nos produits</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #69f0ae\" href=\"#\">La
+                        maison</a>
+                    <a class=\"dropdown-item\" href=\"#\">Maison</a>
+                    <a class=\"dropdown-item\" href=\"#\">Vaisselle</a>
+                    <a class=\"dropdown-item\" href=\"#\">Microfibres</a>
+                    <a class=\"dropdown-item\" href=\"#\">Linge</a>
+                    <a class=\"dropdown-item\" href=\"#\">Atmosphère</a>
+                    <a class=\"dropdown-item\" href=\"#\">Accessoires d'entretien</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #880e4f\" href=\"#\">La
+                        cosmétique</a>
+                    <a class=\"dropdown-item\" href=\"#\">Visage</a>
+                    <a class=\"dropdown-item\" href=\"#\">Corps</a>
+                    <a class=\"dropdown-item\" href=\"#\">Hygiène</a>
+                    <a class=\"dropdown-item\" href=\"#\">Cheveux</a>
+                    <a class=\"dropdown-item\" href=\"#\">Homme</a>
+                    <a class=\"dropdown-item\" href=\"#\">Bébé</a>
+                    <a class=\"dropdown-item\" href=\"#\">Enfant</a>
+                    <a class=\"dropdown-item\" href=\"#\">Accessoires Cosmétiques</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item font-weight-bold text-uppercase\" style=\"color: #827717\" href=\"#\">Le
+                        bien-être</a>
+                    <a class=\"dropdown-item\" href=\"#\">Huiles essentielles</a>
+                    <a class=\"dropdown-item\" href=\"#\">Compléments alimentaires</a>
+                    <a class=\"dropdown-item\" href=\"#\">Tisanes</a>
+                </div>
+            </li>
+
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-search\"></i></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-shopping-basket\"></i></a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user\"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    {% if app.user %}
+        <a href=\"#\">Déconnexion</a>
+    {% else %}
+        <a href=\"#\">Connexion</a>
+        <a href=\"#\">Inscription</a>
+
+    {% endif %}
+</nav>
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
+        integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\"
+        integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\"
+        integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\"
+        crossorigin=\"anonymous\"></script>
+</body>
 </html>
-", "base.html.twig", "C:\\Users\\Windows-Famille\\Documents\\CDA-19224-2\\ProjetFilRouge\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Camille Toulisse\\Documents\\GitHub\\CDA-19224-2\\ProjetFilRouge\\templates\\base.html.twig");
     }
 }
