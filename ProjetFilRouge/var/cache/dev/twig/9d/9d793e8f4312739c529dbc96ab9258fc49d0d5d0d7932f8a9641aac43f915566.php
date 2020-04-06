@@ -161,14 +161,29 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             </li>
         </ul>
     </div>
-</nav>
+
+    ";
+        // line 88
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "user", [], "any", false, false, false, 88)) {
+            // line 89
+            echo "        <a href=\"#\">Déconnexion</a>
+    ";
+        } else {
+            // line 91
+            echo "        <a href=\"#\">Connexion</a>
+        <a href=\"#\">Inscription</a>
+
+    ";
+        }
+        // line 95
+        echo "</nav>
 
 ";
-        // line 89
+        // line 97
         $this->displayBlock('body', $context, $blocks);
-        // line 90
+        // line 98
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 91
+        // line 99
         echo "<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -226,7 +241,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 89
+    // line 97
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -244,7 +259,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 90
+    // line 98
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -274,7 +289,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     public function getDebugInfo()
     {
-        return array (  248 => 90,  230 => 89,  212 => 10,  193 => 6,  172 => 91,  170 => 90,  168 => 89,  121 => 45,  107 => 36,  94 => 26,  88 => 25,  75 => 15,  71 => 14,  66 => 11,  64 => 10,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  263 => 98,  245 => 97,  227 => 10,  208 => 6,  187 => 99,  185 => 98,  183 => 97,  179 => 95,  173 => 91,  169 => 89,  167 => 88,  121 => 45,  107 => 36,  94 => 26,  88 => 25,  75 => 15,  71 => 14,  66 => 11,  64 => 10,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -365,6 +380,14 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             </li>
         </ul>
     </div>
+
+    {% if app.user %}
+        <a href=\"#\">Déconnexion</a>
+    {% else %}
+        <a href=\"#\">Connexion</a>
+        <a href=\"#\">Inscription</a>
+
+    {% endif %}
 </nav>
 
 {% block body %}{% endblock %}
@@ -380,6 +403,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         crossorigin=\"anonymous\"></script>
 </body>
 </html>
-", "base.html.twig", "C:\\Users\\Camille Toulisse\\Desktop\\Symfony\\GreenAndCare\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Camille Toulisse\\Documents\\GitHub\\CDA-19224-2\\ProjetFilRouge\\templates\\base.html.twig");
     }
 }

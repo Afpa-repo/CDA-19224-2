@@ -80,3 +80,12 @@ b101ac,127.0.0.1,GET,http://localhost:8000/,1586149209,,200
 215928,127.0.0.1,GET,http://localhost:8000/,1586150338,,200
 cefa2e,127.0.0.1,GET,http://localhost:8000/admin,1586150483,,200
 b79ca5,127.0.0.1,GET,http://localhost:8000/,1586150485,,200
+8cef1f,127.0.0.1,GET,http://localhost:8000/admin,1586151032,,200
+ea8850,127.0.0.1,GET,http://localhost:8000/,1586151034,,200
+46b773,127.0.0.1,GET,http://localhost:8000/,1586151106,,200
+72e8cd,127.0.0.1,GET,http://localhost:8000/nos-produits/accueil,1586151132,,200
+3ba9a4,127.0.0.1,GET,http://localhost:8000/,1586151145,,200
+b2bf56,127.0.0.1,GET,http://localhost:8000/,1586152010,7791a5,500
+7791a5,127.0.0.1,GET,http://localhost:8000/,1586152010,,500
+6ad0e0,127.0.0.1,GET,http://localhost:8000/,1586152079,,200
+3454ef,127.0.0.1,GET,http://localhost:8000/admin,1586152092,,200
