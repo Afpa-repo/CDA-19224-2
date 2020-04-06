@@ -103,3 +103,17 @@ e35c4f,127.0.0.1,GET,http://localhost:8000/,1586159155,,200
 8cdc42,127.0.0.1,GET,http://localhost:8000/admin,1586157612,,200
 fde12b,127.0.0.1,GET,http://localhost:8000/,1586157621,,200
 >>>>>>> Stashed changes
+9535ef,::1,GET,http://localhost:8000/,1586167139,a11004,500
+a11004,::1,GET,http://localhost:8000/,1586167140,,500
+c59340,::1,GET,http://localhost:8000/,1586167181,b2d64c,500
+b2d64c,::1,GET,http://localhost:8000/,1586167181,,500
+f60368,::1,GET,http://localhost:8000/,1586167344,,200
+84be0b,::1,GET,http://localhost:8000/inscription,1586167367,fcd311,500
+fcd311,::1,GET,http://localhost:8000/inscription,1586167367,,500
+8ab4b6,::1,GET,http://localhost:8000/inscription,1586167430,,200
+99af7d,::1,GET,http://localhost:8000/inscription,1586167457,a26754,500
+a26754,::1,POST,http://localhost:8000/inscription,1586167457,,500
+973716,::1,POST,http://localhost:8000/inscription,1586167504,,200
+f0dbfa,::1,GET,http://localhost:8000/login,1586167524,,200
+36876a,::1,POST,http://localhost:8000/login,1586167530,,302
+a9a6cf,::1,GET,http://localhost:8000/,1586167531,,200

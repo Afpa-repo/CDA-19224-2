@@ -178,6 +178,6 @@ class __TwigTemplate_6f3a3c77a26f846d2cb5aa4713f3ad9b56581b398264223cfeabeb9a7da
             {% endfor %}
         </div>
     </div>
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\Camille Toulisse\\Desktop\\Symfony\\GreenAndCare\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Windows-Famille\\Documents\\depot filrouge\\CDA-19224-2\\ProjetFilRouge\\templates\\pages\\home.html.twig");
     }
 }
