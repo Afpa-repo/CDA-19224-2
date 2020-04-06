@@ -5,9 +5,9 @@
 
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
-
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerT9Eb0zL/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerAjTjkcx/App_KernelDevDebugContainer.php';
+
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
 $classes[] = 'Symfony\Bundle\TwigBundle\TwigBundle';
@@ -29,7 +29,9 @@ $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\Admin\AdminProductController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\ProductController';
+$classes[] = 'App\Controller\SecurityController';
 $classes[] = 'App\Form\ProductType';
+$classes[] = 'App\Form\UserType';
 $classes[] = 'App\Repository\ProductRepository';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController';
@@ -303,8 +305,14 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault';
 $classes[] = 'Symfony\Component\Security\Http\Firewall\AccessListener';
 $classes[] = 'Symfony\Component\Security\Http\AccessMap';
 $classes[] = 'Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener';
+$classes[] = 'Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener';
+$classes[] = 'Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy';
+$classes[] = 'Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler';
+$classes[] = 'Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider';
+$classes[] = 'Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider';
+$classes[] = 'Symfony\Component\Security\Core\User\UserChecker';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver';
 $classes[] = 'Symfony\Component\Security\Http\Authentication\AuthenticationUtils';
 $classes[] = 'Symfony\Component\Security\Core\Authorization\AuthorizationChecker';
@@ -321,6 +329,11 @@ $classes[] = 'Symfony\Bundle\SecurityBundle\Security\FirewallContext';
 $classes[] = 'Symfony\Bundle\SecurityBundle\Security\FirewallConfig';
 $classes[] = 'Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext';
 $classes[] = 'Symfony\Component\Security\Http\Firewall\ExceptionListener';
+$classes[] = 'Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint';
+$classes[] = 'Symfony\Component\Security\Http\Firewall\LogoutListener';
+$classes[] = 'Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler';
+$classes[] = 'Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler';
+$classes[] = 'Symfony\Component\Security\Http\Logout\SessionLogoutHandler';
 $classes[] = 'Symfony\Component\Security\Http\HttpUtils';
 $classes[] = 'Symfony\Component\Security\Http\Logout\LogoutUrlGenerator';
 $classes[] = 'Symfony\Component\Security\Core\Encoder\UserPasswordEncoder';
@@ -328,7 +341,7 @@ $classes[] = 'Symfony\Component\Security\Http\RememberMe\ResponseListener';
 $classes[] = 'Symfony\Component\Security\Core\Role\RoleHierarchy';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\Token\Storage\UsageTrackingTokenStorage';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage';
-$classes[] = 'Symfony\Component\Security\Core\User\InMemoryUserProvider';
+$classes[] = 'Symfony\Bridge\Doctrine\Security\User\EntityUserProvider';
 $classes[] = 'Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener';
