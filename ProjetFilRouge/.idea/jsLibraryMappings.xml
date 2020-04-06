@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+<<<<<<< HEAD:ProjetFilRouge/.idea/jsLibraryMappings.xml
     <file url="PROJECT" libraries="{bootstrap, jquery-3.4.1.slim, materialize}" />
+=======
+    <file url="PROJECT" libraries="{bootstrap, jquery-3.4.1.slim, popper}" />
+>>>>>>> Guillaume:GreenAndCare/.idea/jsLibraryMappings.xml
   </component>
 </project>

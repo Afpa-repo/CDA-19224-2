@@ -13,12 +13,21 @@ security:
             anonymous: lazy
             provider: from_databases
 
+<<<<<<< HEAD:ProjetFilRouge/config/packages/security.yaml
             form_login:  
                 check_path : login
                 login_path : login
  
 
             logout: 
+=======
+            form_login:
+                check_path : login
+                login_path : login
+
+
+            logout:
+>>>>>>> Guillaume:GreenAndCare/config/packages/security.yaml
                 path : logout
                 target: home
 
@@ -31,10 +40,17 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+<<<<<<< HEAD:ProjetFilRouge/config/packages/security.yaml
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
     encoders: 
         App\Entity\User : 
+=======
+    # - { path: ^/admin, roles: ROLE_ADMIN }
+    # - { path: ^/profile, roles: ROLE_USER }
+    encoders:
+        App\Entity\User :
+>>>>>>> Guillaume:GreenAndCare/config/packages/security.yaml
             algorithm: bcrypt
             cost: 12
 
