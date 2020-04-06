@@ -1308,6 +1308,7 @@
 [2020-04-06T06:20:14.429816+00:00] doctrine.DEBUG: SELECT p0_.id AS id_0, p0_.title AS title_1, p0_.short_description AS short_description_2, p0_.long_description AS long_description_3, p0_.price AS price_4, p0_.soldout AS soldout_5, p0_.promo AS promo_6, p0_.created_at AS created_at_7 FROM product p0_ WHERE p0_.soldout = 0 ORDER BY p0_.id ASC LIMIT 4 [] []
 [2020-04-06T06:20:14.573978+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2020-04-06T06:20:19.889615+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"00b89d"},"request_uri":"http://localhost:8000/_wdt/00b89d","method":"GET"} []
+<<<<<<< Updated upstream
 =======
 [2020-04-06T07:45:53.438209+00:00] request.INFO: Matched route "admin.product.index". {"route":"admin.product.index","route_parameters":{"_route":"admin.product.index","_controller":"App\\Controller\\Admin\\AdminProductController::index"},"request_uri":"http://localhost:8000/admin","method":"GET"} []
 [2020-04-06T07:45:53.812773+00:00] doctrine.DEBUG: SELECT t0.id AS id_1, t0.title AS title_2, t0.short_description AS short_description_3, t0.long_description AS long_description_4, t0.price AS price_5, t0.soldout AS soldout_6, t0.promo AS promo_7, t0.created_at AS created_at_8 FROM product t0 [] []
@@ -1324,4 +1325,14 @@
 [2020-04-06T07:46:33.773674+00:00] doctrine.DEBUG: SELECT t0.id AS id_1, t0.title AS title_2, t0.short_description AS short_description_3, t0.long_description AS long_description_4, t0.price AS price_5, t0.soldout AS soldout_6, t0.promo AS promo_7, t0.created_at AS created_at_8 FROM product t0 [] []
 [2020-04-06T07:46:33.868341+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2020-04-06T07:46:38.203575+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"9816b9"},"request_uri":"http://localhost:8000/_wdt/9816b9","method":"GET"} []
+>>>>>>> Stashed changes
+=======
+[2020-04-06T07:20:11.564442+00:00] request.INFO: Matched route "admin.product.index". {"route":"admin.product.index","route_parameters":{"_route":"admin.product.index","_controller":"App\\Controller\\Admin\\AdminProductController::index"},"request_uri":"http://localhost:8000/admin","method":"GET"} []
+[2020-04-06T07:20:12.418189+00:00] doctrine.DEBUG: SELECT t0.id AS id_1, t0.title AS title_2, t0.short_description AS short_description_3, t0.long_description AS long_description_4, t0.price AS price_5, t0.soldout AS soldout_6, t0.promo AS promo_7, t0.created_at AS created_at_8 FROM product t0 [] []
+[2020-04-06T07:20:12.593180+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2020-04-06T07:20:16.688939+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"8cdc42"},"request_uri":"http://localhost:8000/_wdt/8cdc42","method":"GET"} []
+[2020-04-06T07:20:21.225928+00:00] request.INFO: Matched route "home". {"route":"home","route_parameters":{"_route":"home","_controller":"App\\Controller\\HomeController::index"},"request_uri":"http://localhost:8000/","method":"GET"} []
+[2020-04-06T07:20:21.723590+00:00] doctrine.DEBUG: SELECT p0_.id AS id_0, p0_.title AS title_1, p0_.short_description AS short_description_2, p0_.long_description AS long_description_3, p0_.price AS price_4, p0_.soldout AS soldout_5, p0_.promo AS promo_6, p0_.created_at AS created_at_7 FROM product p0_ WHERE p0_.soldout = 0 ORDER BY p0_.id ASC LIMIT 4 [] []
+[2020-04-06T07:20:21.795504+00:00] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2020-04-06T07:20:24.227446+00:00] request.INFO: Matched route "_wdt". {"route":"_wdt","route_parameters":{"_route":"_wdt","_controller":"web_profiler.controller.profiler::toolbarAction","token":"fde12b"},"request_uri":"http://localhost:8000/_wdt/fde12b","method":"GET"} []
 >>>>>>> Stashed changes
