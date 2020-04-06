@@ -11,14 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class SecurityController extends AbstractController 
+class SecurityController extends AbstractController
 {
-    
+
 
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function create_user(AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder) 
+    public function create_user(AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder)
     {
         $user = new User();
 
@@ -50,9 +50,9 @@ class SecurityController extends AbstractController
             {
                 $user->setRole("particulier");
             }
-            
+
             $user->setPassword($hash);
-            
+
             $manager->persist($user);
             $manager->flush();
         }

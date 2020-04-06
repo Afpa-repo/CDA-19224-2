@@ -5,9 +5,9 @@
 
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
-require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerX5lGNCX/App_KernelDevDebugContainer.php';
 
+require dirname(__DIR__, 3).'\\vendor/autoload.php';
+require __DIR__.'/ContainerT9Eb0zL/App_KernelDevDebugContainer.php';
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
 $classes[] = 'Symfony\Bundle\TwigBundle\TwigBundle';
@@ -26,11 +26,11 @@ $classes[] = 'Symfony\Component\HttpClient\HttpClient';
 $classes[] = 'Symfony\Bridge\Monolog\Logger';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
-$classes[] = 'App\Controller\Admin\AdminPropertyController';
+$classes[] = 'App\Controller\Admin\AdminProductController';
 $classes[] = 'App\Controller\HomeController';
-$classes[] = 'App\Controller\PropertyController';
-$classes[] = 'App\Form\PropertyType';
-$classes[] = 'App\Repository\PropertyRepository';
+$classes[] = 'App\Controller\ProductController';
+$classes[] = 'App\Form\ProductType';
+$classes[] = 'App\Repository\ProductRepository';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController';
 $classes[] = 'Symfony\Component\Cache\DoctrineProvider';
