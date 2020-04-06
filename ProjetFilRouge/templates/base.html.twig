@@ -84,6 +84,14 @@
             </li>
         </ul>
     </div>
+
+    {% if app.user %}
+        <a href="{{ path("logout") }}">Déconnexion</a>
+    {% else %}
+        <a href="{{ path("login") }}">Connexion</a>
+        <a href="{{ path("inscription") }}">Inscription</a>
+
+    {% endif %}
 </nav>
 
 {% block body %}{% endblock %}
