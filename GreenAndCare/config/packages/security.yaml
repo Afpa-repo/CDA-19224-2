@@ -36,5 +36,9 @@ security:
     encoders:
         App\Entity\User :
             algorithm: bcrypt
+<<<<<<< HEAD:GreenAndCare/config/packages/security.yaml
             cost: 12
 
+=======
+            cost: 12
+>>>>>>> f4643759a0854cb9b228b5b72eb66669cdb3df91:ProjetFilRouge/config/packages/security.yaml

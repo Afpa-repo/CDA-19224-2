@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserType;
+use App\Form\UserPartType;
+use App\Form\UserProType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,22 +19,37 @@ class SecurityController extends AbstractController
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function create_user(AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder) 
+    public function redirect_inscription() 
+    {
+        return $this->render("security/redirect_inscription.html.twig");
+    }
+     /**
+     * @Route("/inscription-{status}", name="inscription_form")
+     */
+    public function create_user($status, AuthenticationUtils $AU, EntityManagerInterface $manager, Request $request, UserPasswordEncoderInterface $encoder) 
     {
         $user = new User();
 
         $last_username = $AU->getLastUsername();
         $error = $AU->getLastAuthenticationError();
 
-        $form = $this->createForm(UserType::class, $user);
+        if($status == "pro")
+        {
+            $form = $this->createForm(UserProType::class, $user);
+            $user->setRole("professionnel");
+        }
+        else if($status == "part")
+        {
+            $form = $this->createForm(UserPartType::class, $user);
+            $user->setRole("particulier");
+        }
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
         {
             $hash = $encoder->encodePassword($user,$user->getPassword());
-            if($user->it_is_pro)
-            {
-                if($user->getSiren() == null)
+
+                if($user->getSiren() == null && $user->getRole() == "professionnel")
                 {
                     return $this->render("security/create_user.html.twig",[
                         'error_siren' => "Vous êtes un professionnel, entrez votre SIREN !",
@@ -42,26 +58,25 @@ class SecurityController extends AbstractController
                         'form' => $form->createView()
                     ]);
                 }
-                else{
-                    $user->setRole("professionnel");
+                else
+                {
+                    $user->setPassword($hash);
+            
+                    $manager->persist($user);
+                    $manager->flush();
                 }
-            }
-            else
-            {
-                $user->setRole("particulier");
-            }
-            
-            $user->setPassword($hash);
-            
-            $manager->persist($user);
-            $manager->flush();
         }
+            
+           
+
         return $this->render("security/create_user.html.twig",[
             'last_username' => $last_username,
             'error' => $error,
             'form' => $form->createView()
         ]);
     }
+
+    
     /**
      * @Route("/login", name="login")
      */

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title product.title %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>{{ product.title }}</h1>
+                    <img src="#" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2>{{ product.shortDescription }}</h2>
+                    <p>{{ product.longDescription | nl2br }}</p>
+                    <p class="text-primary">{{ product.formattedPrice }} €</p>
+                    <select class="custom-select col-md-2">
+                        <option selected value="1">1</option>
+                        <option selected value="2">2</option>
+                        <option selected value="3">3</option>
+                        <option selected value="4">4</option>
+                        <option selected value="5">5</option>
+                    </select>
+                    <a href="" class="btn btn-primary">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+
+{% endblock %}

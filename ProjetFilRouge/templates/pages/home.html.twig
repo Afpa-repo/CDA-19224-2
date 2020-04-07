@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Produits entretien, cosmétiques, bien-être écologique | Green And Care' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Nos nouveautés</h1>
+        <div class="row flex">
+            {% for product in products %}
+                <div class="col-3">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ product.title }}
+                            </h5>
+                            <p class="card-text">{{ product.shortDescription }}</p>
+                            <p class="card-text">{{ product.formattedPrice }} €</p>
+                            <a href="{{ path('product.show', {id: product.id, slug: product.slug}) }}" class="btn btn-light stretched-link">Détails</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
