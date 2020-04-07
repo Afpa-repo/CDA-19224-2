@@ -4554,3 +4554,51 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+
+#scale{
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+#scale:hover{
+  transform: scale(1.3);
+}
+#productScale{
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+#productScale:hover{
+  transform: scale(1.1);
+}
+html {
+  height: 100%;
+}
+
+body{
+  background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/12/abstract-vs-nature-4k_1543945847.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav a{
+  color: white;
+}
+
+nav a:hover{
+  color:lightblue;
+}
+
+#sub{
+  border-radius: 2%;
+  background-color: gray;
+  opacity: 90%;
+}
+
+#inline{
+  display: flex;
+  flex-direction: row;
+}
+
+*{font-family: 'Playfair Display', sans-serif;
+}
+

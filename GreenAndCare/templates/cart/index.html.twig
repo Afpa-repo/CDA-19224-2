@@ -4,17 +4,20 @@
 {% endblock %}
 
 {% block body %}
-<div class="bg-light p-3">
+    <div class="col-12">
+<div class="text-white p-3">
     <h1>Votre panier</h1>
 </div>
+    </div>
 
-{% if items | length > 0  %}
-<table class="table">
+    <div class="container">
+    {% if items | length > 0  %}
+<table class="table bg-light">
     <thead>
         <tr>
-            <th>Titre</th>
+            <th>Nom du produit</th>
             <th>Prix</th>
-            <th>Quantité</th>
+            <th>Quantité(s)</th>
             <th>Total</th>
             <th></th>
         </tr>
@@ -23,9 +26,9 @@
         {% for item in items %}
         <tr>
             <td>{{ item.product.title }}</td>
-            <td>{{ item.product.price }}</td>
+            <td>{{ item.product.price }}€</td>
             <td>{{ item.quantity }}</td>
-            <td>{{ item.product.price * item.quantity }}</td>
+            <td>{{ item.product.price * item.quantity }} €</td>
             <td>
                 <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
@@ -36,8 +39,9 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="3" class="text-right">Total : </td>
-            <td>{{ total }}</td>
+            <td colspan="3" class="text-right"></td>
+            <td><b>Prix Total TTC</b></td>
+            <td>{{ total }} €</td>
             <td></td>
         </tr>
     </tfoot>
@@ -45,4 +49,5 @@
 {%else%}
 <p>Surprise, c'est vide !</p>
 {%endif %}
+    </div>
 {% endblock %}
