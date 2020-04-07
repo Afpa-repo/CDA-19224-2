@@ -227,6 +227,6 @@ class __TwigTemplate_7597bd6a044415e5fcc97da468ef3d98c6a6b20fdcec228b7dea3be04da
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\Windows-Famille\\Documents\\depot filrouge\\CDA-19224-2\\ProjetFilRouge\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\Windows-Famille\\Documents\\depot Guillaume\\GreenAndCare\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
     }
 }

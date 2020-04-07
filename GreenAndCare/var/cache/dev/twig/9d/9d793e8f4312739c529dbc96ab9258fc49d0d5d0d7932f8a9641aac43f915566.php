@@ -65,13 +65,14 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         // line 11
         echo "</head>
 <body>
+
 <nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #f1f8e9;\">
     <a class=\"navbar-brand\" href=\"";
-        // line 14
+        // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">
         <img src=\"";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/green_logo.png"), "html", null, true);
         echo "\" width=\"60\" height=\"60\"
              class=\"d-inline-block align-middle\"
@@ -81,16 +82,17 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
+
     <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-        <ul class=\"navbar-nav\">
+        <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item ";
-        // line 25
-        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 25, $this->source); })()), "home"))) {
+        // line 27
+        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 27, $this->source); })()), "home"))) {
             echo "active";
         }
         echo "\">
                 <a class=\"nav-link\" href=\"";
-        // line 26
+        // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Accueil<span class=\"sr-only\">(current)</span></a>
             </li>
@@ -100,8 +102,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">Actualités</a>
             </li>
-
-
             <li class=\"nav-item dropdown ";
         // line 36
         if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 36, $this->source); })()), "products"))) {
@@ -148,42 +148,49 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
                     <a class=\"dropdown-item\" href=\"#\">Tisanes</a>
                 </div>
             </li>
-
-
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-search\"></i></a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-shopping-basket\"></i></a>
+                <a class=\"nav-link\" href=\"";
+        // line 78
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_index");
+        echo "\"><i class=\"fas fa-shopping-basket\"></i></a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user\"></i></a>
+            ";
+        // line 80
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "user", [], "any", false, false, false, 80)) {
+            // line 81
+            echo "            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 82
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\"><i class=\"fas fa-user\"></i></a>
             </li>
-        </ul>
-    </div>
-
-    ";
-        // line 88
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "user", [], "any", false, false, false, 88)) {
-            // line 89
-            echo "        <a href=\"#\">Déconnexion</a>
-    ";
+            ";
         } else {
-            // line 91
-            echo "        <a href=\"#\">Connexion</a>
-        <a href=\"#\">Inscription</a>
-
-    ";
+            // line 85
+            echo "            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 86
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo "\"><i class=\"fas fa-user\"></i></a>
+            </li>
+            ";
         }
-        // line 95
-        echo "</nav>
+        // line 89
+        echo "        </ul>
+
+        </div>
+    </div>
+</nav>
 
 ";
-        // line 97
+        // line 95
         $this->displayBlock('body', $context, $blocks);
-        // line 98
+        // line 96
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 99
+        // line 97
         echo "<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -241,7 +248,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 97
+    // line 95
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -259,7 +266,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     }
 
-    // line 98
+    // line 96
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -289,7 +296,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
 
     public function getDebugInfo()
     {
-        return array (  263 => 98,  245 => 97,  227 => 10,  208 => 6,  187 => 99,  185 => 98,  183 => 97,  179 => 95,  173 => 91,  169 => 89,  167 => 88,  121 => 45,  107 => 36,  94 => 26,  88 => 25,  75 => 15,  71 => 14,  66 => 11,  64 => 10,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  270 => 96,  252 => 95,  234 => 10,  215 => 6,  194 => 97,  192 => 96,  190 => 95,  182 => 89,  176 => 86,  173 => 85,  167 => 82,  164 => 81,  162 => 80,  157 => 78,  121 => 45,  107 => 36,  96 => 28,  90 => 27,  76 => 16,  72 => 15,  66 => 11,  64 => 10,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -306,6 +313,7 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
+
 <nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #f1f8e9;\">
     <a class=\"navbar-brand\" href=\"{{ path('home') }}\">
         <img src=\"{{ asset('assets/img/green_logo.png') }}\" width=\"60\" height=\"60\"
@@ -316,8 +324,9 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
+
     <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-        <ul class=\"navbar-nav\">
+        <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item {% if current_menu is defined and current_menu == 'home' %}active{% endif %}\">
                 <a class=\"nav-link\" href=\"{{ path('home') }}\">Accueil<span class=\"sr-only\">(current)</span></a>
             </li>
@@ -327,8 +336,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">Actualités</a>
             </li>
-
-
             <li class=\"nav-item dropdown {% if current_menu is defined and current_menu == 'products' %}active{% endif %}\">
                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\"
                    data-toggle=\"dropdown\"
@@ -367,27 +374,25 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
                     <a class=\"dropdown-item\" href=\"#\">Tisanes</a>
                 </div>
             </li>
-
-
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-search\"></i></a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-shopping-basket\"></i></a>
+                <a class=\"nav-link\" href=\"{{ path('cart_index')}}\"><i class=\"fas fa-shopping-basket\"></i></a>
             </li>
+            {% if app.user %}
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user\"></i></a>
+                <a class=\"nav-link\" href=\"{{ path('logout') }}\"><i class=\"fas fa-user\"></i></a>
             </li>
+            {% else %}
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('login') }}\"><i class=\"fas fa-user\"></i></a>
+            </li>
+            {% endif %}
         </ul>
+
+        </div>
     </div>
-
-    {% if app.user %}
-        <a href=\"#\">Déconnexion</a>
-    {% else %}
-        <a href=\"#\">Connexion</a>
-        <a href=\"#\">Inscription</a>
-
-    {% endif %}
 </nav>
 
 {% block body %}{% endblock %}
@@ -403,6 +408,6 @@ class __TwigTemplate_6ddc216faa59a07abe95bc8b7a0881f5557b0706db83acd786cf3af7f8d
         crossorigin=\"anonymous\"></script>
 </body>
 </html>
-", "base.html.twig", "C:\\Users\\Windows-Famille\\Documents\\depot filrouge\\CDA-19224-2\\ProjetFilRouge\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Windows-Famille\\Documents\\depot Guillaume\\GreenAndCare\\templates\\base.html.twig");
     }
 }

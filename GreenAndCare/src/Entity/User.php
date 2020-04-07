@@ -69,8 +69,6 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $role;
-    
-    public $it_is_pro;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
