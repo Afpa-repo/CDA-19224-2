@@ -4571,9 +4571,7 @@ readers do not read off random characters that represent icons */
 #productScale:hover{
   transform: scale(1.1);
 }
-html {
-  height: 100%;
-}
+
 
 body{
   background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/12/abstract-vs-nature-4k_1543945847.jpg");
