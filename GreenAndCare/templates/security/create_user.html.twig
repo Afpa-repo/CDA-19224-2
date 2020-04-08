@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h1>Inscription</h1>
+                <p>Tous les champs sont obligatoires</p>
+            </div>
+        </div>
+{% if error_siren is defined%}
+    <span>{{ error_siren }}</span>
+{% endif %}
+    <div id="inline" class="col-12">
+        <div id="sub" class="col-4 pt-2 pb-2 text-white">
+            {{ form_start(form) }}
+            <div id="input" class="col-12">{{ form_row(form.mail) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.password) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.confirm_password) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.Nom) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.Prenom) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.telephone) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.adresse) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.it_is_pro) }}</div>
+            <div id="input" class="col-12">{{ form_row(form.siren) }}</div>
+{{ form_widget(form) }}
+
+<input type="submit" value="Cree le compte" class="col-12 mb-1 btn btn-success">
+        </div>
+        {{ form_end(form) }}
+        <div class="col-8 text-center text-white">
+            <h2> Pourquoi s'inscrire?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, asperiores aspernatur autem consequuntur, delectus eos esse facilis, in libero nam natus odit officiis pariatur quidem quos sequi tempora temporibus.</p>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}
