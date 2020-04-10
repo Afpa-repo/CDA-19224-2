@@ -1,0 +1,77 @@
+*{font-family: 'Playfair Display', sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+.navbar-light {
+    background-color: #f1f8e9;
+}
+
+.dropdown-menu {
+    background-color: #f1f8e9;
+}
+
+#all_products_link {
+    color: #ffab40
+}
+
+#home_products_link {
+    color: #69f0ae
+}
+
+#cosmetic_products_link {
+    color: #880e4f
+}
+
+#feel_good_products_link {
+    color: #827717
+}
+#scale{
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+#scale:hover{
+    transform: scale(1.3);
+}
+#scaleTitle{
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+#scaleTitle:hover{
+    transform: scale(1.1);
+}
+#productScale{
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+#productScale:hover{
+    transform: scale(1.1);
+}
+
+
+nav a{
+    color: white;
+}
+
+nav a:hover{
+    color:lightblue;
+}
+
+#sub{
+    border-radius: 2%;
+    background-color: gray;
+    opacity: 90%;
+}
+
+#inline{
+    display: flex;
+    flex-direction: row;
+}
+
+*{font-family: 'Playfair Display', sans-serif;
+}

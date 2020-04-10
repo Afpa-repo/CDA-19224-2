@@ -21,6 +21,7 @@ return [
         '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\SecurityController::redirect_inscription'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/forgot_pass' => [[['_route' => 'forgot_pass', '_controller' => 'App\\Controller\\SecurityController::forgot_pass'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -46,8 +47,10 @@ return [
                     .'|add/([^/]++)(*:227)'
                     .'|remove/([^/]++)(*:250)'
                 .')'
-                .'|/nos\\-produits/([a-z0-9\\-]*)\\-([^/]++)(*:297)'
-                .'|/inscription\\-([^/]++)(*:327)'
+                .'|/create/([^/\\-]++)\\-([^/]++)(*:287)'
+                .'|/nos\\-produits/([a-z0-9\\-]*)\\-([^/]++)(*:333)'
+                .'|/inscription\\-([^/]++)(*:363)'
+                .'|/forgot_pass/([^/]++)(*:392)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -64,9 +67,11 @@ return [
         ],
         227 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
         250 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::remove'], ['id'], null, null, false, true, null]],
-        297 => [[['_route' => 'product.show', '_controller' => 'App\\Controller\\ProductController::show'], ['slug', 'id'], null, null, false, true, null]],
-        327 => [
-            [['_route' => 'inscription_form', '_controller' => 'App\\Controller\\SecurityController::create_user'], ['status'], null, null, false, true, null],
+        287 => [[['_route' => 'create_admin', '_controller' => 'App\\Controller\\CreateAdminController::index'], ['email', 'pass'], null, null, false, true, null]],
+        333 => [[['_route' => 'product.show', '_controller' => 'App\\Controller\\ProductController::show'], ['slug', 'id'], null, null, false, true, null]],
+        363 => [[['_route' => 'inscription_form', '_controller' => 'App\\Controller\\SecurityController::create_user'], ['status'], null, null, false, true, null]],
+        392 => [
+            [['_route' => 'pass_retrieving', '_controller' => 'App\\Controller\\SecurityController::pass_retrieving'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

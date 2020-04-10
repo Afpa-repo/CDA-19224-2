@@ -14,14 +14,51 @@ class UserProType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('mail')
-            ->add('password', PasswordType::class)
-            ->add('confirm_password', PasswordType::class)
-            ->add('Nom')
-            ->add('Prenom')
-            ->add('telephone')
-            ->add('adresse')
-            ->add('siren')
+        ->add('mail',null,
+            [
+                'label' => "Votre email :",
+                'attr' => ['placeholder' => 'email@domaine.fr']
+            ])
+            ->add('password', PasswordType::class, 
+            [
+                'label' => "Votre mot de passe :",
+                'attr' => ['placeholder' => '8 caractères minimum']
+            ])
+            ->add('confirm_password', PasswordType::class,
+            [
+                'label' => "Votre mot de passe :",
+                'attr' => ['placeholder' => '8 caractères minimum']
+            ])
+            ->add('Nom',
+            null,
+            [
+                'label' => "Votre nom :",
+                'attr' => ['placeholder' => 'Jean-Marie']
+            ])
+            ->add('Prenom',
+            null,
+            [
+                'label' => "Votre prénom :",
+                'attr' => ['placeholder' => 'Jean-Marie']
+            ])
+            ->add('telephone',
+            null,
+            [
+                'label' => "Votre numéro de télephone :",
+                'attr' => ['placeholder' => '0612345678']
+            ])
+            ->add('adresse',
+            null,
+            [
+                'label' => "Votre adresse de société:",
+                'attr' => ['placeholder' => '123 rue de la liberté']
+            ])
+            ->add('siren',
+            null,
+            [
+                'label' => "Votre identifiant d'entreprise :",
+                'attr' => ['placeholder' => '078945612']
+            ])
         ;
     }
 

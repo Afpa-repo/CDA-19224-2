@@ -22,6 +22,7 @@ return [
     'cart_index' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/panier']], [], []],
     'cart_add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/panier/add']], [], []],
     'cart_remove' => [['id'], ['_controller' => 'App\\Controller\\CartController::remove'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/panier/remove']], [], []],
+    'create_admin' => [['email', 'pass'], ['_controller' => 'App\\Controller\\CreateAdminController::index'], [], [['variable', '-', '[^/]++', 'pass', true], ['variable', '/', '[^/\\-]++', 'email', true], ['text', '/create']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'product.index' => [[], ['_controller' => 'App\\Controller\\ProductController::index'], [], [['text', '/nos-produits/accueil']], [], []],
     'product.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\ProductController::show'], ['slug' => '[a-z0-9\\-]*'], [['variable', '-', '[^/]++', 'id', true], ['variable', '/', '[a-z0-9\\-]*', 'slug', true], ['text', '/nos-produits']], [], []],
@@ -29,4 +30,6 @@ return [
     'inscription_form' => [['status'], ['_controller' => 'App\\Controller\\SecurityController::create_user'], [], [['variable', '-', '[^/]++', 'status', true], ['text', '/inscription']], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'forgot_pass' => [[], ['_controller' => 'App\\Controller\\SecurityController::forgot_pass'], [], [['text', '/forgot_pass']], [], []],
+    'pass_retrieving' => [['token'], ['_controller' => 'App\\Controller\\SecurityController::pass_retrieving'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/forgot_pass']], [], []],
 ];

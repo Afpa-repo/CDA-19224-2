@@ -65,15 +65,20 @@ class User implements UserInterface
      */
     private $adresse;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $role;
+      /**
+   * @ORM\Column(name="role", type="array")
+   */
+    private $role = array();
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $SIREN;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Token;
     
     public function getId(): ?int
     {
@@ -152,12 +157,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getRole()
     {
         return $this->role;
     }
 
-    public function setRole(string $role): self
+    public function setRole(array $role)
     {
         $this->role = $role;
         return $this;
@@ -169,7 +174,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array($this->role);
+        return $this->role;
     }
 
     public function getUsername()
@@ -185,6 +190,18 @@ class User implements UserInterface
     public function setSIREN(?string $SIREN): self
     {
         $this->SIREN = $SIREN;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->Token;
+    }
+
+    public function setToken(?string $Token): self
+    {
+        $this->Token = $Token;
 
         return $this;
     }

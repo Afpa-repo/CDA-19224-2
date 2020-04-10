@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for flash in app.flashes %}
+    {% for message in flash %}
+        {{ message }}
+    {% endfor %}
+{% endfor %}
+{% if token_valid %}
+ {{ form_start(form) }}
+ {{ form_widget(form) }}
+ <input type="submit" value="Modifier le mot de passe" class="btn btn-success">
+ {{ form_end(form) }}
+ {% else %}
+ <h3>Votre lien n'est plus valide !</h3>
+{% endif %}
+
+{% endblock %}

@@ -47,4 +47,22 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
-}
+
+//     public function user_exist($email): ?User
+//     {
+//         return $this->createQueryBuilder('u')
+//                     ->andWhere('u.mail = :email')
+//                     ->setParameter('email',$email)
+//                     ->getQuery()
+//                     ->getOneOrNullResult();
+//     } 
+
+//     public function token_by_mail($email): ?String
+//     {
+//         return $this->createQueryBuilder('reset')
+//                     ->where('reset.mail LIKE :email')
+//                     ->setParamater('email',$email)
+//                     ->getQuery()
+//                     ->getResult();
+//     }
+ }

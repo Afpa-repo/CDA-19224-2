@@ -12,8 +12,10 @@
                 {{ message }}
             </div>
         {% endfor %}
-
-        <table class="table table-striped">
+        <div class="text-right mb-3">
+            <a href="{{ path('admin.product.new') }}" class="btn btn-primary">Ajouter un nouveau produit</a>
+        </div>
+        <table class="table table-striped bg-light">
             <thead>
             <tr>
                 <th>Titre du produit</th>
@@ -39,9 +41,6 @@
             </tbody>
         </table>
 
-        <div class="text-right">
-            <a href="{{ path('admin.product.new') }}" class="btn btn-primary">Ajouter un nouveau produit</a>
-        </div>
 
     </div>
 {% endblock %}
