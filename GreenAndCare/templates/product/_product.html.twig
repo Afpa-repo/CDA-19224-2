@@ -1,8 +1,8 @@
 <div class="card h-100">
     {% if product.filename %}
     <img src="/assets/front/img/products/{{ product.filename }}" class="card-img-top">
-        {% else %}
-        <img src="{{'/public/assets/front/img/products/empty.jpg'}}" class="card-img-top">
+    {% else %}
+    <img src="{{ asset('assets/products/fuk.jpg') }}" class="card-img-top">
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">
