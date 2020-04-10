@@ -1,5 +1,9 @@
 <div class="card h-100">
-    <img src="" class="card-img-top" alt="">
+    {% if product.filename %}
+    <img src="/assets/front/img/products/{{ product.filename }}" class="card-img-top">
+        {% else %}
+        <img src="{{'/public/assets/front/img/products/empty.jpg'}}" class="card-img-top">
+    {% endif %}
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{ path('product.show', {slug: product.slug, id: product.id}) }}">
