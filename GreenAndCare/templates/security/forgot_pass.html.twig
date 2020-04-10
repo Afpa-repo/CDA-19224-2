@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for message in app.flashes('warning') %}
+        {{ message }}
+    {% endfor %}
+
+    {{ form_start(form) }}
+        {% for message in app.flashes('success') %}
+            {{ message }}
+        {% endfor %}
+
+        {{ form_widget(form) }}
+        <input type="submit" value="Réinitialisez sont mot de passe" class="btn btn-success">
+    {{ form_end(form) }}
+
+
+{% endblock %}

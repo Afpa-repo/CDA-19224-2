@@ -11,16 +11,16 @@
         <div class="row row-cols-1 row-cols-md-4">
             {% for product in products %}
                 <div class="col mb-4">
-                    <div class="card h-100">
-                        {% if product.filename %}
-                            <img src="/assets/front/img/products/{{ product.filename }}" class="card-img-top">
-                        {% else %}
-                            <img src="{{ asset('assets/products/fuk.jpg') }}" class="card-img-top">
-                        {% endif %}
+                    <div class="card h-100" id="productScale">
                         <div class="card-body">
                             <h5 class="card-title">
                                 {{ product.title }}
                             </h5>
+                            {% if product.filename %}
+                                <img src="/assets/front/img/products/{{ product.filename }}" class="card-img">
+                            {% else %}
+                                <img src="{{ asset('assets/products/fuk.jpg') }}" class="card-img">
+                            {% endif %}
                             <p class="card-text">{{ product.shortDescription }}</p>
                             <p class="card-text">{{ product.formattedPrice }} €</p>
                             <a href="{{ path('product.show', {id: product.id, slug: product.slug}) }}"

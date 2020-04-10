@@ -3,6 +3,12 @@
 {% block body %}
     <h1>Connexion</h1>
     <form action="{{path("login")}}" method="POST">
+        {% if error.message is defined %}
+        <span>{{error.message}}</span>
+        {% endif %}
+         {% for message in app.flashes('success') %}
+            {{ message }}
+        {% endfor %}
         <div class="form-group">
             <input placeholder="Adresse mail" required name="_username" type="text">
         </div>
@@ -13,6 +19,9 @@
         <div class="form-group">
         <button type="submit" class="btn btn-success">Se connecter</button>
             <a href="{{ path('inscription') }}" class="btn btn-success">S'inscrire</a>
+
         </div>
+        <a href="{{ path('forgot_pass') }}" class="btn btn-link">Mot de passe oublié ?</a>
+
     </form>
 {% endblock %}
