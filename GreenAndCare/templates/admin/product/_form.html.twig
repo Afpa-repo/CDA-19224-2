@@ -1,0 +1,33 @@
+{{ form_start(form) }}
+<div class="row mt-4">
+    <div class="col-md-2 mr-5">{{ form_row(form.price) }}</div>
+    <div class="col-md-2 pt-4">{{ form_row(form.promo) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2 mr-5">{{ form_row(form.percentageDiscount) }}</div>
+    <div class="col-md-2">{{ form_row(form.promoPrice) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2 mr-5">{{ form_row(form.quantityInStock) }}</div>
+    <div class="col-md-2 pt-4">{{ form_row(form.soldout) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2">{{ form_row(form.content) }}</div>
+</div>
+<div class="row">
+<div class="col-md-3">{{ form_row(form.title) }}</div>
+</div>
+<div class="row">
+<div class="col-md-3">{{ form_row(form.subCategory) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-8">{{ form_row(form.short_description) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-8">{{ form_row(form.long_description) }}</div>
+</div>
+{{ form_rest(form) }}
+<button class="btn btn-primary my-4">{{ button|default('Enregistrer') }}</button>
+{{ form_end(form) }}
+
+

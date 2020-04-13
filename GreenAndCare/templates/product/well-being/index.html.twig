@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title 'Boutique en ligne - Produits entretien, cosmétiques, bien-être écologique | Green And Care' %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Rechercher par:</h1>
+            {{ form_start(form) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(form.maxPrice) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.subCategories) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.inPromo) }}
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary">Rechercher</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h1>LA BOUTIQUE GREEN AND CARE</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for product in products %}
+                <div class="col mb-4">
+                    {% include 'product/_product.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            {{ knp_pagination_render(products) }}
+        </div>
+    </div>
+{% endblock %}
