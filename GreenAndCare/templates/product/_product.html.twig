@@ -1,14 +1,15 @@
 <div class="card h-100">
-    {% if product.filename %}
-    <img src="/assets/front/img/products/{{ product.filename }}" class="card-img-top">
-    {% else %}
-    <img src="{{ asset('assets/products/fuk.jpg') }}" class="card-img-top">
-    {% endif %}
+    <img src="" class="card-img-top" alt="">
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{ path('product.show', {slug: product.slug, id: product.id}) }}">
                 {{ product.title }}
             </a>
+            {% if product.filename %}
+                <img src="/assets/front/img/products/{{ product.filename }}" class="card-img-top">
+            {% else %}
+                <img src="{{ asset('assets/products/empty.jpg') }}" class="card-img-top">
+            {% endif %}
         </h5>
         <p class="card-text">
             {{ product.shortDescription | nl2br }}

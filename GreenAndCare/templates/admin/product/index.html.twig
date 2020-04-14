@@ -1,8 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin.base.html.twig' %}
 
-{% block title 'Admin | Gérer les produits du catalogue' %}
+{% block title 'Admin | Gérer le catalogue' %}
 
 {% block body %}
+
     <div class="container mt-4">
 
         <h1>Gérer les produits</h1>
@@ -12,9 +13,11 @@
                 {{ message }}
             </div>
         {% endfor %}
-        <div class="text-right mb-3">
+
+        <div class="text-right mb-4">
             <a href="{{ path('admin.product.new') }}" class="btn btn-primary">Ajouter un nouveau produit</a>
         </div>
+
         <table class="table table-striped bg-light">
             <thead>
             <tr>
@@ -40,7 +43,6 @@
             {% endfor %}
             </tbody>
         </table>
-
 
     </div>
 {% endblock %}

@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\SubCategory;
 
 class AdminProductController extends AbstractController
 {
@@ -46,6 +47,8 @@ class AdminProductController extends AbstractController
     public function new(Request $request)
     {
         $product = new Product();
+        dump($product);
+
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 

@@ -73,3 +73,7 @@ nav a:hover{
 
 *{font-family: 'Playfair Display', sans-serif;
 }
+
+#imgSize{
+    width: 100%;
+}

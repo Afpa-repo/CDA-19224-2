@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Entity\ProductSearch;
+use App\Form\ProductSearchType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -38,13 +40,19 @@ class ProductController extends AbstractController
      */
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
-        $products = $paginator->paginate($this->repository->findAllActiveQuery(),
+
+        $search = new ProductSearch(); // entity permettant de filtrer les produits
+        $form = $this->createForm(ProductSearchType::class, $search); // form rattaché à cette entité
+        $form->handleRequest($request); // le form gère la request
+
+        $products = $paginator->paginate($this->repository->findAllVisibleQuery($search),
             $request->query->getInt('page', 1),
             9
         );
         return $this->render('product/index.html.twig', [
             'current_menu' => 'products',
-            'products' => $products
+            'products' => $products,
+            'form' => $form->createView() // on passe le form de recherche à la vue
         ]);
     }
 
@@ -55,7 +63,7 @@ class ProductController extends AbstractController
      */
     public function show(Product $product, string $slug): Response
     {
-        if($product->getSlug() !== $slug) {
+        if ($product->getSlug() !== $slug) {
             $this->redirectToRoute('product.show', [
                 'id' => $product->getId(),
                 'slug' => $product->getSlug()
@@ -64,6 +72,25 @@ class ProductController extends AbstractController
         return $this->render('product/show.html.twig', [
             'product' => $product,
             'current_menu' => 'products'
+        ]);
+    }
+
+    /**
+     * @Route("/nos-produits/La-maison", name="home/product.index")
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
+    public function homeProductsIndex(PaginatorInterface $paginator, Request $request): Response
+    {
+        $products = $paginator->paginate($this->repository->findAllHomeProducts(),
+            $request->query->getInt('page', 1),
+            9
+        );
+        return $this->render('product/home/index.html.twig', [
+            'current_menu' => 'products',
+            'products' => $products,
+
         ]);
     }
 

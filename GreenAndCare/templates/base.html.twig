@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/all.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,669;0,700;0,800;0,900;1,400;1,500;1,600;1,669;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('assets/front/css/script.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
@@ -102,20 +103,26 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <h1>Connexion</h1>
-                                    <form action="{{ path("login") }}" method="POST">
+                                    <form action="{{path("login")}}" method="POST">
+                                        {% if error.message is defined %}
+                                            <span>{{error.message}}</span>
+                                        {% endif %}
                                         <div class="form-group">
                                             <input placeholder="Adresse mail" required name="_username" type="text">
                                         </div>
                                         <div class="form-group">
                                             <input placeholder="Mot de passe" required name="_password" type="password">
                                         </div>
-                                        <button type="submit" class="btn btn-success">Se connecter</button>
-                                    </form>
-                                </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success">Se connecter</button>
+                                            <a href="{{ path('inscription') }}" class="btn btn-success">S'inscrire</a>
+                                        </div>
+                                        <a href="{{ path('forgot_pass') }}" class="btn btn-link">Mot de passe oublié ?</a>
+
+                                    </form>                                </div>
                                 <div class="modal-footer">
                                     <a href="{{ path('inscription') }}" class="btn btn-primary">S'inscrire</a>
-                                    <a href="{{ path('forgot_pass') }}" class="btn btn-link">Mot de passe oublié ?</a>
-
                                 </div>
                             </div>
                         </div>
@@ -134,7 +141,6 @@
 </div>
 
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -144,5 +150,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script>
+    $('select').select2();
+</script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>

@@ -3,9 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Entity\ProductSearch;
+use App\Entity\SubCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Product|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,13 +24,35 @@ class ProductRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param ProductSearch $search
      * @return Query
      */
-    public function findAllActiveQuery(): Query
+    public function findAllVisibleQuery(ProductSearch $search): Query
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.soldout = false')
-            ->getQuery();
+        $query = $this->findVisibleQuery();
+
+        if ($search->getMaxPrice()) { // condition ajoutée à la query pour select les produits ayant un prix max
+            $query = $query
+                ->andWhere('p.price <= :maxprice')
+                ->setParameter('maxprice', $search->getMaxPrice()); // le param maxprice aura comme valeur getMaxPrice()
+        }
+
+        if ($search->getInPromo()) { // condition ajoutée à la query pour select les produits étant en promo
+            $query = $query
+                ->andWhere('p.promo = true');
+        }
+
+        if ($search->getSubCategories()->count() > 0) { // condition ajoutée à la query pour select les produits appartenant à une ou plusieurs sous-catégories
+            $key = 0;
+            foreach ($search->getSubCategories() as $subCategory) { // pour chacune des sous-catégories sélectionnées on ajoute une condition à la query
+                $key++;
+                $query = $query
+                    ->andWhere(':subCategory = p.subCategory')
+                    ->setParameter('subCategory', $subCategory);
+            }
+        }
+
+        return $query->getQuery();
     }
 
     /**
@@ -42,33 +67,24 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-}
 
-// /**
-//  * @return Product[] Returns an array of Product objects
-//  */
-/*
-public function findByExampleField($value)
-{
-    return $this->createQueryBuilder('p')
-        ->andWhere('p.exampleField = :val')
-        ->setParameter('val', $value)
-        ->orderBy('p.id', 'ASC')
-        ->setMaxResults(10)
-        ->getQuery()
-        ->getResult()
-    ;
-}
-*/
+    private function findVisibleQuery(): QueryBuilder
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.soldout = false');
+    }
 
-/*
-public function findOneBySomeField($value): ?Product
-{
-    return $this->createQueryBuilder('p')
-        ->andWhere('p.exampleField = :val')
-        ->setParameter('val', $value)
-        ->getQuery()
-        ->getOneOrNullResult()
-    ;
+    /**
+     * @param SubCategory $subCategory
+     * @return Query
+     */
+    public function findAllHomeProducts(SubCategory $subCategory): Query
+    {
+        $query = $this->findVisibleQuery();
+        $query = $query
+            ->where('p.subCategory = 1')
+            ->setParameter('subCategory', $subCategory );
+
+        return $query->getQuery();
+    }
 }
-*/

@@ -1,0 +1,49 @@
+{% extends 'admin/admin.base.html.twig' %}
+
+{% block title 'Admin | Gérer les catégories du catalogue' %}
+
+{% block body %}
+
+    <div class="container mt-4">
+
+        <h1>Gérer les catégories</h1>
+
+        <div class="text-right">
+            <a href="{{ path('admin.category.new') }}" class="btn btn-primary mb-4">Ajouter une nouvelle catégorie</a>
+        </div>
+
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <table class="table table-striped bg-light">
+            <thead>
+            <tr>
+                <th>Nom de la catégorie</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        <a href="{{ path('admin.category.edit', {id: category.id}) }}"
+                           class="btn btn-secondary">Modifier</a>
+                        <form method="post" action="{{ path('admin.category.delete', {id: category.id}) }}"
+                              style="display: inline-block" onsubmit="return confirm('Êtes vous sûr de vouloir supprimer cette catégorie ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

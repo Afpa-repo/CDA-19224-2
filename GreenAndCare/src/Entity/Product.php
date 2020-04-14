@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Cocur\Slugify\Slugify;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -12,7 +13,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
- * @UniqueEntity("title")
  * @Vich\Uploadable()
  */
 class Product
@@ -23,9 +23,10 @@ class Product
      * @ORM\Column(type="integer")
      */
     private $id;
+
     /**
-     * @var string|null
-     * @ORM\Column(type="string",length=255)
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=5)
      */
     private $filename;
     /**
@@ -45,22 +46,22 @@ class Product
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="float")
+     * @Assert\Positive
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(min=5)
      */
-    private $short_description;
+    private $shortDescription;
 
     /**
      * @ORM\Column(type="text")
      * @Assert\Length(min=20)
      */
-    private $long_description;
-
-    /**
-     * @ORM\Column(type="decimal", scale=2 )
-     * @Assert\Positive
-     */
-    private $price;
+    private $longDescription;
 
     /**
      * @ORM\Column(type="boolean", options={"default": false})
@@ -75,7 +76,33 @@ class Product
     /**
      * @ORM\Column(type="datetime")
      */
-    private $created_at;
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantityInStock;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\SubCategory", inversedBy="productsList")
+     */
+    private $subCategory;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $content;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Assert\Positive
+     */
+    private $PromoPrice;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $percentageDiscount;
 
     /**
      * @ORM\Column(type="datetime")
@@ -84,7 +111,7 @@ class Product
 
     public function __construct()
     {
-        $this->created_at = new \DateTime();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -104,50 +131,40 @@ class Product
         return $this;
     }
 
-    public function getSlug(): string
-    {
-        return (new Slugify())->slugify($this->title);
-    }
-
-    public function getShortDescription(): ?string
-    {
-        return $this->short_description;
-    }
-
-    public function setShortDescription(string $short_description): self
-    {
-        $this->short_description = $short_description;
-
-        return $this;
-    }
-
-    public function getLongDescription(): ?string
-    {
-        return $this->long_description;
-    }
-
-    public function setLongDescription(string $long_description): self
-    {
-        $this->long_description = $long_description;
-
-        return $this;
-    }
-
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(float $price): self
     {
         $this->price = $price;
 
         return $this;
     }
 
-    public function getFormattedPrice(): string
+    public function getShortDescription(): ?string
     {
-        return number_format($this->price, 2, ',', ' ');
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    public function getLongDescription(): ?string
+    {
+        return $this->longDescription;
+    }
+
+    public function setLongDescription(string $longDescription): self
+    {
+        $this->longDescription = $longDescription;
+
+        return $this;
     }
 
     public function getSoldout(): ?bool
@@ -176,16 +193,86 @@ class Product
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->created_at = $created_at;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
+    public function getQuantityInStock(): ?int
+    {
+        return $this->quantityInStock;
+    }
+
+    public function setQuantityInStock(int $quantityInStock): self
+    {
+        $this->quantityInStock = $quantityInStock;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getPromoPrice(): ?float
+    {
+        return $this->PromoPrice;
+    }
+
+    public function setPromoPrice(?float $PromoPrice): self
+    {
+        $this->PromoPrice = $PromoPrice;
+
+        return $this;
+    }
+
+    public function getPercentageDiscount(): ?int
+    {
+        return $this->percentageDiscount;
+    }
+
+    public function setPercentageDiscount(?int $percentageDiscount): self
+    {
+        $this->percentageDiscount = $percentageDiscount;
+
+        return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return (new Slugify())->slugify($this->title);
+    }
+
+    public function getFormattedPrice(): string
+    {
+        return number_format($this->price, 2, ',', ' ');
+    }
+
+
+    public function getSubCategory(): ?SubCategory
+    {
+        return $this->subCategory;
+    }
+
+    public function setSubCategory(?SubCategory $subCategory): self
+    {
+        $this->subCategory = $subCategory;
+
+        return $this;
+    }
     /**
      * @return null|string
      */
@@ -237,4 +324,5 @@ class Product
 
         return $this;
     }
+
 }
